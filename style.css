@@ -1,140 +1,490 @@
-/* === style.css === */
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Navigation Bar (Flexbox) */
-nav {
+body {
+    font-family: 'Arial', sans-serif;
+    color: #222;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #ff5722;
+}
+
+a:hover {
+    color: #d84315;
+}
+
+header {
+    background-color: #f5f5f5;
+    padding: 1.5rem 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #333;
-    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hero Section */
+nav ul li a:hover, nav ul li a.active {
+    color: white;
+    background-color: #1a6db1;
+}
+
 .hero {
-    background: url('images/hero.jpg') center/cover;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-image: url(./images/hero.jpg);
+    background-size: cover;
+    background-position: center;
     color: white;
-    font-size: 2em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     text-align: center;
-    padding: 20px;
+    padding: 5rem 2rem;
+    border-radius: 8px;
 }
 
-/* Index Page Layout (Flexbox) */
-.index-container {
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #1a6db1;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0e4170;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.main-content {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    gap: 2rem;
+    flex-direction: row-reverse; /* Changed the position of the sidebar */
 }
 
-.section {
+.intro {
+    flex: 2;
+    background-color: #f9f9f9; /* Changed background color */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slightly increased shadow intensity */
+}
+
+.intro h2 {
+    color: #ff5722; /* Changed heading color */
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    margin-bottom: 1rem;
+    color: #555; /* Added text color */
+}
+
+.text-link {
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 1rem;
+    color: #1a6db1; /* Added link color */
+}
+
+.sidebar {
     flex: 1;
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin: 10px;
 }
 
-/* Services Page Layout (Grid) */
-.services-container {
+.sidebar > div {
+    background-color: #ffffff; /* Ensured consistent white background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slightly increased shadow intensity */
+    margin-bottom: 1.5rem;
+}
+
+.sidebar h3 {
+    color: #ff5722; /* Changed heading color */
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.testimonial blockquote {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: #777; /* Added text color */
+}
+
+.stats ul {
+    list-style: none;
+}
+
+.stats ul li {
+    margin-bottom: 0.75rem;
+    color: #333; /* Added text color */
+}
+
+.stats span {
+    font-weight: 600;
+    color: #ff5722; /* Changed highlight color */
+}
+
+
+/* this styles the services.html*/
+.page-header {
+    background-color: #e8f4ff; /* Lightened background color */
+    padding: 3.5rem 2.5rem; /* Increased padding */
+    text-align: center;
+}
+
+.page-header h2 {
+    color: #145a8d; /* Darkened text color */
+    font-size: 2.5rem; /* Increased font size */
+    margin-bottom: 0.75rem; /* Increased margin */
+}
+
+.services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted column size */
+    gap: 2.5rem; /* Increased gap */
+    max-width: 1100px; /* Reduced max width */
+    margin: 2.5rem auto; /* Increased margin */
+    padding: 0 2.5rem; /* Increased padding */
 }
 
 .service-card {
-    padding: 20px;
-    border: 1px solid #ddd;
-    text-align: center;
-    transition: transform 0.3s ease;
-    background: #f9f9f9;
+    background-color: #f9f9f9; /* Changed background color */
+    padding: 2.5rem; /* Increased padding */
+    border-radius: 10px; /* Increased border radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Adjusted shadow */
+    transition: all 0.4s ease; /* Slowed transition */
+    border: 1px solid #d6d6d6; /* Added subtle border */
 }
 
 .service-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px); /* Increased hover effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    border-color: #c0c0c0; /* Darkened border on hover */
 }
 
-/* Contact Page Form */
+.service-icon {
+    margin-bottom: 1.5rem; /* Increased margin */
+}
+
+.service-card h3 {
+    color: #145a8d; /* Darkened heading color */
+    margin-bottom: 1rem; /* Increased margin */
+}
+
+.service-card p {
+    margin-bottom: 2rem; /* Increased margin */
+    color: #555; /* Added text color */
+}
+
+.card-link {
+    font-weight: 600; /* Increased font weight */
+    color: #145a8d; /* Changed link color */
+    text-decoration: underline; /* Added underline */
+}
+/* end */
+
+/* this styles contact.html*/
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    gap: 2rem;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info {
+    background-color: #f0f8ff; /* Changed to a light blue background */
+    padding: 2rem;
+    border-radius: 10px; /* Increased border radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+}
+
+.contact-info h3, .contact-form h3 {
+    color: #0d47a1; /* Darkened heading color */
+    margin-bottom: 1rem;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+    color: #333; /* Added text color */
+}
+
 .contact-form {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
+    background-color: #f9f9f9; /* Changed to a light gray background */
+    padding: 2.5rem; /* Increased padding */
+    border-radius: 10px; /* Increased border radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
 }
 
-.contact-form input,
-.contact-form textarea {
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600; /* Increased font weight */
+    color: #555; /* Added label color */
+}
+
+.form-group input, .form-group textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
+    padding: 0.85rem; /* Increased padding */
+    border: 1px solid #ccc; /* Adjusted border color */
+    border-radius: 6px; /* Increased border radius */
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form button {
-    background: #333;
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #0d47a1; /* Darkened focus border color */
+    box-shadow: 0 0 0 4px rgba(13, 71, 161, 0.2); /* Enhanced focus shadow */
+}
+
+.form-group input:invalid, .form-group textarea:invalid {
+    border-color: #e53935; /* Changed invalid border color */
+}
+
+.submit-button {
+    background-color: #0d47a1; /* Darkened button color */
     color: white;
-    padding: 10px 15px;
     border: none;
+    padding: 0.85rem 1.75rem; /* Increased padding */
+    font-size: 1.1rem; /* Increased font size */
+    font-weight: 700; /* Increased font weight */
+    border-radius: 6px; /* Increased border radius */
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
-.contact-form button:hover {
-    background: #555;
+.submit-button:hover {
+    background-color: #08306b; /* Darkened hover color */
+    transform: translateY(-3px); /* Increased hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced hover shadow */
+}
+/* end */
+
+footer {
+    background-color: #f0f0f0; /* Changed to light gray background */
+    color: #555; /* Changed text color */
+    padding: 1.5rem; /* Reduced padding */
+    margin-top: 2rem; /* Reduced margin */
+    text-align: center; /* Centered text */
+    border-top: 2px solid #ccc; /* Added a subtle border */
+    font-size: 0.9rem; /* Adjusted font size */
 }
 
-/* Animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+@media screen and (max-width: 1024px) {
+    .main-content {
+        padding: 0 1.5rem;
+        gap: 1.5rem;
+    }
 
-.hero {
-    animation: fadeIn 2s ease-in;
-}
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1.5rem;
+        gap: 1.5rem;
+    }
 
-/* Media Queries */
-@media (max-width: 1024px) {
-    .index-container {
-        flex-direction: column;
-        align-items: center;
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero {
+        padding: 3rem 1.5rem;
+    }
+
+    .page-header {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .page-header h2 {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .intro, .contact-info, .contact-form {
+        padding: 1.5rem;
     }
 }
 
-@media (max-width: 768px) {
-    .services-container {
+@media screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+    }
+    
+    nav ul li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .services-grid {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+    
+    header {
+        padding: 0.75rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
     nav ul {
-        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    nav ul li {
+        margin: 0 0.75rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+    
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .main-content, .services-grid, .contact-container {
+        padding: 0 1rem;
+        margin: 1.5rem auto;
+        gap: 1rem;
+    }
+    
+    .intro, .sidebar > div, .service-card, .contact-info, .contact-form {
+        padding: 1.25rem;
+    }
+    
+    .page-header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .page-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .form-group input, .form-group textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .submit-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+    
+    footer {
+        padding: 1.5rem 1rem;
         text-align: center;
     }
+    
+    .intro h2, .contact-info h3, .contact-form h3 {
+        font-size: 1.4rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
 }
+
+@keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
