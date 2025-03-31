@@ -1,7 +1,7 @@
 # Shify & Sons - Multipage Website
 
 ## Project Overview
-This project is a multipage website for **Shify & Sons**, a stationery company. The site consists of a **Home Page**, **Services Page**, and **Contact Page**. It demonstrates the use of modern CSS techniques such as **Flexbox, Grid, Media Queries, and Animations** to create a responsive and visually appealing layout.
+This project is a multipage website for **Shifu & Sons**, a stationery company. The site consists of a **Home Page**, **Services Page**, and **Contact Page**. It demonstrates the use of modern CSS techniques such as **Flexbox, Grid, Media Queries, and Animations** to create a responsive and visually appealing layout.
 
 ## Page Descriptions
 ### 1. **Home Page (index.html)**
