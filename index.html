@@ -16,9 +16,11 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+          
         </header>
 
         <section class="hero">
+            <div id="clock" style="font-size: 1.5rem; color: white; position: absolute; top: 20px; left: 20px;"></div>
             <h2>Quality Stationery for Every Need</h2>
             <p>Supplying Quality Stationary to businesses</p>
             <a href="contact.html" class="cta-button">Contact us</a>
@@ -55,5 +57,21 @@
             <p>&copy; 2025 Shifu&Sons. All rights reserved.</p>
             
         </footer>
+        <button id="themeToggle" class="floating-button">🌙</button>
+        <script src="script.js" defer></script>
+        <script>
+            function updateClock() {
+                const clockElement = document.getElementById("clock");
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, "0");
+                const minutes = now.getMinutes().toString().padStart(2, "0");
+                const seconds = now.getSeconds().toString().padStart(2, "0");
+                clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+            }
+
+            // Initialize the clock and update it every second
+            setInterval(updateClock, 1000);
+            updateClock(); // Call immediately to avoid delay
+        </script>
     </body>
 </html>
