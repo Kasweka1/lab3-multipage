@@ -16,6 +16,7 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+        
         </header>
 
         <section class="page-header">
@@ -48,8 +49,8 @@
                 <h3>Send Us a Message</h3>
                 <form id="contactForm">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your name">
+                        <label for="nameInput">Name</label>
+                        <input type="text" id="nameInput" name="name"  placeholder="Your name">
                     </div>
                     
                     <div class="form-group">
@@ -63,18 +64,45 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                        <label for="messageInput">Message</label>
+                        <textarea id="messageInput" name="message" rows="5"  placeholder="How can we help you?"></textarea>
                     </div>
                     
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
+                <p id="response" style="margin-top: 1rem; color: #0d47a1; font-weight: bold;"></p>
             </section>
         </main>
+        <div class="row-container">
+            <section class="team-section">
+                <h2>Team Members</h2>
+                <ul id="userList"></ul>
+                <button id="loadUsersBtn" class="load-button">Load Users</button>
+            </section>
+
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3 class="question">What is this website about?</h3>
+                    <p class="answer">This is a demo project for learning web development.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="question">How can I contact support?</h3>
+                    <p class="answer">You can contact support via email at support@shifuandsons.com or call us at +1 234 567 890.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="question">What services do you offer?</h3>
+                    <p class="answer">We offer a variety of services, including custom notebooks, engraved pens, and branded folders.</p>
+                </div>
+            </section>
+        </div>
 
         <footer>
             <p>&copy; 2025 Shifu&Sons. All rights reserved.</p>
             
         </footer>
+
+        <button id="themeToggle" class="floating-button">🌙</button>
+        <script src="script.js" defer></script>
     </body>
 </html>
